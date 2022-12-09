@@ -2808,9 +2808,9 @@ auto CServerData::HirelingCombatTraining() const -> bool
 {
 	return boolVals.test( BIT_HIRELINGCOMBATTRAINING );
 }
-auto CServerData::HirelingCombatTraining( bool newVal ) -> void
+auto CServerData::HirelingCombatTraining( [[maybe_unused]] bool newVal ) -> void
 {
-	boolVals.set( BIT_HIRELINGCOMBATTRAINING, newVal );
+	boolVals.set( BIT_HIRELINGCOMBATTRAINING );
 }
 
 //o------------------------------------------------------------------------------------------------o
