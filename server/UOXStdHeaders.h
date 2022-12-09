@@ -36,7 +36,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#if PLATFORM == WINDOWS
+#if defined(_WIN32)
+
 #include <sys/timeb.h>
 
 #else
