@@ -311,8 +311,8 @@
 				64A90103293E3DD4009B54DA /* uox3.cpp */,
 				64A90104293E3DD4009B54DA /* uox3.h */,
 			);
-			name = source;
-			path = ../../../source;
+			name = server;
+			path = ../../../server;
 			sourceTree = "<group>";
 		};
 		64A9016B293E3EED009B54DA /* Frameworks */ = {
