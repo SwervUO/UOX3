@@ -1,5 +1,5 @@
 # UOX3
-[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) [![Coverity Scan Build Status](https://scan.coverity.com/projects/23322/badge.svg)](https://scan.coverity.com/projects/ultima-offline-experiment-3)
+[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) 
 
 **Ultima Offline eXperiment 3** - Allows one to run their own, custom UO shards.
 
@@ -30,27 +30,41 @@ UOX3 supports Integrated Development Environment(IDE) building for Visual Studio
 		-) `git clone https://github.com/UOX3DevTeam/UOX3.git`  
   			-)If you'd rather grab another branch of the git repository, like the **develop** branch where most updates get pushed first before being merged into the master branch, you can use the following command *after* completing the previous step: `git checkout develop`  
 ## Step 3: Compile UOX3  
-	-) **Windows**  Open the UOX3\make\VS2022\uox3\uox3.sln file, select build.  
-	-) **macOS**  Open the UOX3/make/XCode/uox3/uox3.xcworkspace.  Select build.  
+	-) **Windows**  Open the UOX3\ide\VS2022\uox3\uox3.sln file, select build.  
+	-) **macOS**  Open the UOX3/ide/XCode/uox3/uox3.xcworkspace.  Select build.  
 	-) **Linux**  
-<details> 
-	<summary>Single command</summary> 
-		-) Enter from a terminal window, in the UOX3 directory: `./automake.sh`  
-</details>
-<details>
-		<summary>Individual steps</summary>  
 		-) Enter the following:  
 			-) `mkdir build`  
 			-) `cd build`  
-			-) `cmake ../make/cmake -DCMAKE_BUILD_TYPE=Release `  
+			-) `cmake ../server -DCMAKE_BUILD_TYPE=Release `  
 			-) `cmake --build . --config Release`  
-</details>
 
 
 The binary/executable will be located:  
-	-) **Windows**  UOX3\make\vs2022\uox3\x64\Release\uox3.exe  
-	-) **macOS**  UOX3\make\XCode\uox3\Build\Products\Release\uox3  
-	-) **Linux**  UOX3/make/cmake/build/uox3  
+	-) **Windows**  UOX3\ide\vs2022\uox3\x64\Release\uox3.exe  
+	-) **macOS**  UOX3\ide\XCode\uox3\Build\Products\Release\uox3  
+	-) **Linux**  UOX3/build/uox3  
 	
 
-Once you have all the required files in place, you can follow the regular steps listed under **Installation and Setup > Configuring Your UOX3 Shard** in the UOX3 documentation (see docs folder, or visit https://www.uox3.org/docs/index.html#configureUOX3) to finish your UOX3 setup!
+# Setting up the shard's directory
+## Creating directories and acquiring the data
+	1. Create a directory for your shard (e.g. `mkdir MyShard`)
+	2. Change to that directory (e.g. `cd MyShard`)
+	3. Create the following directories in MyShard
+		-) accounts  
+		-) archives  
+		-) books  
+		-) logs  
+		-) msgboards  
+		-) shared
+	4. Clone from git the following repositories into *MyShard* directory  
+		-)  dictionaries  
+		-)  dfndata  
+		-)  jscripts  
+	5. Copy the uox.ini file from the UOX3 directory into the *MyShard* directory
+	6. Copy the **uox3** executable/binary into the UOX3 directory  
+
+## Edit the *MyShard/uox.ini* file as needed.  
+# Starting your shard  
+From the *MyShard* directory run the **uox3** executable/binary.
+	
