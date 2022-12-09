@@ -1,0 +1,6 @@
+[submodule "zlib"]
+	path = zlib
+	url = https://github.com/UOX3-PlayGround/zlib
+[submodule "spidermonkey"]
+	path = spidermonkey
+	url = https://github.com/UOX3-PlayGround/spidermonkey
