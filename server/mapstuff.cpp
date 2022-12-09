@@ -1964,7 +1964,7 @@ auto UltimaMap::BlockAndIndexFor( int x, int y ) const -> std::tuple<int, int, i
 auto UltimaMap::ProcessEntry( [[maybe_unused]] std::size_t entry, std::size_t index, std::vector<std::uint8_t> &data ) -> bool
 {
 	auto count = data.size() / 196;
-	size_t block = ( static_cast<int>( index ) * 0xC4000 ) / 196;
+	auto block = ( static_cast<int>( index ) * 0xC4000 ) / 196;
 	for( auto i = 0; i < static_cast<int>( count ); ++i )
 	{
 		auto ptr = data.data() + ( i * 196 );
